@@ -1,9 +1,88 @@
+.calendar-container {
+	@include span-columns(12);
+	margin: 3em;
+	overflow-x: scroll;
+}
+
 .calendar {
 	background: white;
-	width: 100%;
-	padding: 1em;
+	padding: 2em 1em 1em;
+	width: 3000px;
 	float: left;
 }
+
+.heading {
+	b {
+	position: absolute;
+	top: -10px;
+	left: -.5em;
+	display: block;
+	}
+}
+
+.time {
+	overflow-x: scroll;
+	margin-top: 1em;
+
+	.headings {
+		width: 10em;
+	}
+
+	> time {
+		width: 5em;
+	}
+
+	> time, .headings {
+		display: inline-block;
+		float: left;
+		position: relative;
+		padding: 2em 0 1em;
+	}
+
+
+	// styling for heading only
+
+	span:nth-child(n+2) {
+		min-height: 100px;
+		height: 100px;
+		border-right: 1px solid $grey;
+		border-bottom: 1px solid $grey;
+		padding: 2em .5em 1em;
+	}
+
+	// stlying for all table elements
+
+	span {
+		padding: 0;
+		float: left;
+		min-width: 100%;
+		width: 100%;
+		overflow: hidden;
+		transition: all 0.5s ease;
+	}
+
+	.approved:hover {
+		width: 200%;
+	}
+
+	b {
+		font-weight: normal;
+		display: inline-block;
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+
+	.approved {
+		background: rgba(184, 240, 197, .7);
+	}
+
+	.busy {
+		background: rgba(240, 184, 184, .6);
+	}
+
+}
+
 
 .calendar-daily {
 	@extend .calendar;

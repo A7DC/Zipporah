@@ -3,11 +3,14 @@
 @import 'config/_mixins';
 
 //frameworks
+@import "bourbon/bourbon";
+@import "neat/neat";
 
 //global things
 @import 'general/_reset';
 @import 'layout/_main';
 @import 'layout/type';
+@import 'general/var';
 @import 'layout/calendar';
 
 //pages
